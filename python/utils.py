@@ -30,10 +30,17 @@ def fspecial_log(size, std):
    return h1 - h1.mean()
 
 
-def chi2dist(X, Y):
-    s = X + Y
-    d = Y - X
-    d = (d ** 2 / (s + 1e-10)).sum() / 2.0
-    return d
+def chi2dist(X, Y_Set):
+    #modified function for use in 3.1
+    d_lst=[]
+    for Y in Y_Set:
+        s = X + Y
+        d = Y - X
+        d = (d ** 2 / (s + 1e-10)).sum() / 2.0
+        d_lst.append(d)
+    return d_lst
+
+
+    
 
 

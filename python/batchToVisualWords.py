@@ -1,4 +1,4 @@
-import multiprocessing
+import multiprocess
 import pickle
 import math
 import cv2 as cv
@@ -30,7 +30,7 @@ def batch_to_visual_words(num_cores, point_method):
 
     workers = []
     for i in range(num_cores):
-        workers.append(multiprocessing.Process(target=worker_to_visual_words, args=(i,)))
+        workers.append(multiprocess.Process(target=worker_to_visual_words, args=(i,)))
     for worker in workers:
         worker.start()
 
@@ -41,5 +41,5 @@ def batch_to_visual_words(num_cores, point_method):
 
 
 if __name__ == "__main__":
-
-    batch_to_visual_words(num_cores=4, point_method='Random')
+    __spec__ = None
+    batch_to_visual_words(num_cores=4, point_method='Harris')
