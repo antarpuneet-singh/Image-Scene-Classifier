@@ -9,3 +9,5 @@ The data set contains 1491 images from the SUN image database, divided into 8 ca
 # Approach
 I have used the "bag of words" approach to solve this problem. "Bag of words" is a very popular technique used in Natural Language Processing. To use it in the image domain, I have converted every pixel in the image into a high dimensional representation by applying a set of image convolution filters on the pixels. Then these high dimensional features are clustered by using K-means algorithm. The group of cluster centres gives us our dictionary of visual words. We can then use the nearest neighbour classifier to categorize the pixels.
 
+# Note
+This work was done as a part of my academic assignment project at University of Alberta. 
